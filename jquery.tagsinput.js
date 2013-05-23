@@ -210,14 +210,7 @@
 			},settings);
 	
 			delimiter[id] = data.delimiter;
-			
-			if (settings.onAddTag || settings.onRemoveTag || settings.onChange) {
-				tags_callbacks[id] = new Array();
-				tags_callbacks[id]['onAddTag'] = settings.onAddTag;
-				tags_callbacks[id]['onRemoveTag'] = settings.onRemoveTag;
-				tags_callbacks[id]['onChange'] = settings.onChange;
-			}
-	
+				
 			var markup = '<div id="'+id+'_tagsinput" class="tagsinput"><div id="'+id+'_addTag">';
 			
 			if (settings.interactive) {
@@ -326,6 +319,14 @@
 				    });
 				}
 			} // if settings.interactive
+			
+			if (settings.onAddTag || settings.onRemoveTag || settings.onChange) {
+				tags_callbacks[id] = new Array();
+				tags_callbacks[id]['onAddTag'] = settings.onAddTag;
+				tags_callbacks[id]['onRemoveTag'] = settings.onRemoveTag;
+				tags_callbacks[id]['onChange'] = settings.onChange;
+			}
+
 		});
 			
 		return this;
